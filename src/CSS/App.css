@@ -1,0 +1,170 @@
+/*主背景动画*/
+
+* {
+    /*初始化*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*两种主题*/
+.dark {
+    /*渐变,deg是渐变角度的意思*/
+    background: linear-gradient(200deg, #191928, #555475);
+}
+
+.dark .switchBtn {
+    background-color: #fff;
+}
+
+.white .switchBtn {
+    background-color: white;
+}
+
+.white {
+    /*渐变,deg是渐变角度的意思*/
+    background: linear-gradient(200deg, #e3c5eb, #a9c1ed);
+}
+
+.switchBtn {
+
+    border-radius: 4px;
+    box-shadow: 0 3px #666;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    position: absolute;
+    border: none;
+    box-shadow: 0 6px #999;
+
+    height: 20px;
+    width: 40px;
+    top: 70vh;
+}
+
+.white .switchBtn:hover {
+    background-color: #555475
+}
+
+.dark .switchBtn:hover {
+    background-color: #a9c1ed
+}
+
+.switchBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+.BOX {
+    height: 100vh;
+    display: flex;
+    /*弹性布局 居中  盒子的排列方式*/
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+ul li {
+    position:fixed;
+    border: 1px solid #fff;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    opacity: 0;
+}
+
+.square li {
+    top: 40vh;
+    left: 60vw;
+    /* 执行动画 ： 动画名 时长 线性的 无限次播放 */
+    animation: square 10s linear infinite;
+}
+
+.square li:nth-child(2) {
+    top: 80vh;
+    left: 10vw;
+    animation-delay: 2s;
+}
+
+.square li:nth-child(3) {
+    top: 80vh;
+    left: 85vw;
+    animation-delay: 4s;
+}
+
+.square li:nth-child(4) {
+    top: 10vh;
+    left: 70vw;
+    animation-delay: 6s;
+}
+
+
+.square li:nth-child(5) {
+    top: 10vh;
+    left: 10vw;
+    animation-delay: 8s;
+}
+
+.circle li {
+    bottom: 0;
+    left: 15vw;
+    animation: circle 10s linear infinite;
+}
+
+.circle li:nth-child(2) {
+    left: 35vw;
+    /* 执行动画延迟 */
+    animation-delay: 2s;
+}
+
+.circle li:nth-child(3) {
+    left: 55vw;
+    /* 执行动画延迟 */
+    animation-delay: 4s;
+}
+
+.circle li:nth-child(4) {
+    left: 75vw;
+    /* 执行动画延迟 */
+    animation-delay: 6s;
+}
+
+.circle li:nth-child(5) {
+    left: 95vw;
+    /* 执行动画延迟 */
+    animation-delay: 8s;
+}
+
+
+/* 定义动画 */
+@keyframes square {
+    0% {
+        transform: scale(0) rotateY(0deg);
+        opacity: 1.0;
+    }
+
+    100% {
+        transform: scale(3) rotateY(1000deg);
+        opacity: 0.0;
+    }
+}
+
+@keyframes circle {
+    0% {
+        transform: scale(0) rotateY(0deg);
+        opacity: 1.0;
+        bottom: 0;
+        border-radius: 0%;
+    }
+
+    100% {
+        transform: scale(3) rotateY(1000deg);
+        opacity: 0.0;
+        bottom: 90vh;
+        border-radius: 50%;
+    }
+}

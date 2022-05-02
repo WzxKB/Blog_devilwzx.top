@@ -1,0 +1,277 @@
+
+
+.ringContainer .avatar {
+
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border: 1px solid #666;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.ringContainer {
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 25vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.ringContainer .ring {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: transparent solid 5px;
+    border-bottom: #CC9999 solid 3px;
+    border-top: #CC9999 solid 3px;
+    border-radius: 50%;
+
+    animation: ring 2s linear infinite
+}
+
+.ringContainer .ring:nth-child(2) {
+
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: transparent solid 4px;
+    border-right: #FF9900 solid 4px;
+    border-left: #FFFF00 solid 4px;
+}
+
+.ringContainer .ring:nth-child(3) {
+
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: transparent solid 5px;
+    border-bottom: #0099CC solid 5px;
+    border-top: #009966 solid 5px;
+}
+
+.ringContainer .ring:nth-child(4) {
+
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: transparent solid 5px;
+    border-right: #99CCCC solid 5px;
+    border-left: #99CCFF solid 5px;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+/* 按钮导航栏 */
+.NavContainer {
+    /* 弹性布局,垂直居中 */
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 80vw;
+}
+
+/* 导航样式 */
+.Nav {
+    font-family: 'Courier New', Courier, monospace;
+    /* 相对定位 */
+    position: relative;
+    /* 将a标签转换为块级元素,不然无法设置宽高 */
+    display: block;
+    width: 140px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out 0.3s;
+
+    filter: hue-rotate(calc(var(--i)*60deg));
+}
+
+.Nav::before,
+.Nav::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid plum;
+
+    transition: all 0.3s ease-in-out 0.3s;
+}
+
+.Nav::before {
+    top: 0;
+    left: 0;
+    /* 删除左边框的上边框和做边框 */
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.Nav::after {
+    right: 0;
+    bottom: 0;
+    /* 删除右边框的右边框和下边框 */
+    border-left: 0;
+    border-top: 0;
+}
+
+.Nav:hover {
+    background-color: plum;
+    color: #000;
+    box-shadow: 0 0 50px plum;
+    /* below 下倒影 1px 倒影和元素的距离  ,最后是一个渐变色 */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    /* 给上面的元素延时 */
+    transition-delay: 0.4s;
+}
+
+.Nav:hover::after,
+.Nav:hover::before {
+    width: 138px;
+    height: 58px;
+    /* 这里不需要延迟 */
+    transition-delay: 0s
+}
+
+/* 图标的容器 */
+.iconContainer {
+    position: absolute;
+    display: flex;
+    top: 80vh;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 100%;
+}
+
+.iconContainer::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    /* 背景模糊  模糊滤镜*/
+    backdrop-filter: blur(5px);
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+
+.iconIn {
+    position: relative;
+    margin: 20px;
+}
+
+.icon .iconIn a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* 盒子阴影 */
+    box-shadow: 0px 5px 45px rgba(0, 0, 0, 0.2);
+    /* 背景模糊 */
+    backdrop-filter: blur(2px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 加一个动画过度,才不会太生硬 */
+    transition: all 0.5s;
+    /* 超过这个范围的会被隐藏,配合扫光特效使用 */
+    overflow: hidden;
+}
+
+/* 图标上抬的动画 */
+.icon a:hover {
+    transform: translateY(-10px);
+}
+
+/* 扫光动画 */
+
+.icon .iconIn a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 100%;
+    background-color: #fff;
+
+    /* 元素沿着x轴横切,沿x轴向右移动150px; */
+    transform: skew(45deg) translateX(150px);
+    transition: all 0.5s;
+}
+
+.icon .iconIn a:hover::before {
+    transform: skew(45deg) translateX(-150px);
+}
+
+/* qq二维码 */
+.iconIn:nth-child(3):hover::before{
+    content: "";
+    background:url(../assets/img/qq.png);
+    background-size: 100%;
+    height: 170px;
+    width: 150px;
+    position: absolute;
+    overflow: hidden; 
+    bottom:50px;
+    left:50px;
+    animation:qq 1s ; 
+    box-shadow: 0px 5px 45px rgba(0, 0, 0, 0.4);
+}
+@keyframes qq {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+
+    }
+}
+.iconIn:nth-child(4):hover::before{
+    content: "";
+    background:url(../assets/img//微信.png);
+    background-size: 100%;
+    height: 180px;
+    width: 150px;
+    position: absolute;
+    overflow: hidden; 
+    bottom:50px;
+    left:50px;
+    animation:qq 1.75s ; 
+    box-shadow: 0px 5px 45px rgba(0, 0, 0, 0.4);
+}
+

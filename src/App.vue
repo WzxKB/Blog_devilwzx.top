@@ -1,23 +1,51 @@
+<!--
+ * @Author: devilwzx
+ * @Date: 2022-04-08 18:08:03
+ * @LastEditors: devilwzx
+ * @LastEditTime: 2022-04-18 17:44:40
+ * @FilePath: \vue-php\vue\src\App.vue
+ * @Description: 
+ * 
+ * @My website: devilwzx.top
+ * Copyright (c) 2022 by devilwzx, All Rights Reserved. 
+-->
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="app" ref="box">
+    <router-link to="/entrance"></router-link>
+    <router-view></router-view>
+    <div class="square">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="circle">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'App'
-}
-</script>
+  data() {
+    return {
+      msg: "msg",
+    };
+  },
+  methods: {
+   
+  },
 
+};
+</script>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./CSS/App.css";
 </style>
