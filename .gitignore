@@ -7,7 +7,7 @@ yarn-debug.log*
 /test/e2e/reports/
 selenium-debug.log
 
-/php/conn.php
+php/conn.php
 
 # Editor directories and files
 .idea
