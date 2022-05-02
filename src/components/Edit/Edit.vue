@@ -10,21 +10,24 @@
  * Copyright (c) 2022 by devilwzx, All Rights Reserved. 
 -->
 <template>
-    <div>
-        <h2>我是编辑</h2>
-        <router-link to="/markdown">Markdown</router-link>
-    <div>
+  <div id="Edit">
+    <nav>
+      <router-link to="/markdown">Markdown</router-link>
+      <label>|</label>
+      <router-link to="/quill">Quill</router-link>
+    </nav>
+     <div class="edit-container">
         <router-view></router-view>
-    </div>
-    </div>
-    
+      </div>
+
+  </div>
 </template>
 <script>
+import "@/CSS/Edit.css";
 export default {
-    data() {
-        return{
-
-        }
-    }
-}
+  data() {
+    return {};
+  },
+};
 </script>
+

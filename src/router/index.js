@@ -24,7 +24,8 @@ import Warehouse from '@/components/WareHouse/WareHouse.vue'
 import Edit from '@/components/Edit/Edit.vue'
   //Markdown
   import Markdown from '@/components/Edit/views/Markdown.vue'
-
+  //富文本
+  import Quill from '@/components/Edit/views/Quill.vue'
 // 关于我
 import AboutMe from '@/components/AboutMe/AboutMe.vue'
 
@@ -44,11 +45,14 @@ export default new Router({
           path: '/edit', component: Edit, children: [
             //  Markdown
             { path: '/markdown', component: Markdown },
+            //  富文本
+            { path: '/quill', component: Quill },
+
           ]
         },
 
         //  关于我
-        {path:'/aboutMe',component:AboutMe}
+        { path: '/aboutMe', component: AboutMe }
       ]
     },
 

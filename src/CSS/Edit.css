@@ -1,0 +1,32 @@
+#Edit {
+    margin-top: 30px;
+    margin-left: 100px;
+
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+#Edit a {
+    color: #fff;
+    font-weight: 100;
+    font-family: serif;
+    font-size: large;
+    margin: 4px;
+
+    /* text-decoration:none ; */
+}
+
+#Edit label {
+    color: #fff;
+    size: 5px;
+}
+.edit-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 200px;
+    overflow-y:scroll;
+}
