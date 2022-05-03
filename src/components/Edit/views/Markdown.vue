@@ -10,12 +10,13 @@
         style="min-height: 65vh"
       />
     </div>
+    <blog-form></blog-form>
     <router-view></router-view>
-    
   </div>
 </template>
 
 <script>
+import Form from "./Form.vue";
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 import "@/CSS/Markdown.css";
@@ -25,6 +26,7 @@ export default {
   props: [],
   components: {
     mavonEditor,
+    "blog-form": Form,
   },
   data() {
     return {

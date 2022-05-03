@@ -8,7 +8,6 @@
 
 <script>
 import '@/CSS/Form.css'
-Vue.component('wzx-form')
 export default {
   data() {
     return {

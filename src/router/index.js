@@ -40,7 +40,7 @@ export default new Router({
 
         //  编辑
         {
-          path: '/edit', component: Edit, children: [
+          path: '/edit',redirect:'/markdown', component: Edit, children: [
             //  Markdown
             { path: '/markdown', component: Markdown },
             //  富文本
