@@ -22,10 +22,12 @@ import Warehouse from '@/components/WareHouse/WareHouse.vue'
 
 //编辑
 import Edit from '@/components/Edit/Edit.vue'
-  //Markdown
-  import Markdown from '@/components/Edit/views/Markdown.vue'
-  //富文本
-  import Quill from '@/components/Edit/views/Quill.vue'
+//Markdown
+import Markdown from '@/components/Edit/views/Markdown.vue'
+//富文本
+import Quill from '@/components/Edit/views/Quill.vue'
+//Form
+import Form from '@/components/Edit/views/Form.vue'
 // 关于我
 import AboutMe from '@/components/AboutMe/AboutMe.vue'
 
@@ -47,6 +49,9 @@ export default new Router({
             { path: '/markdown', component: Markdown },
             //  富文本
             { path: '/quill', component: Quill },
+
+            //文章提交信息表单
+            { path: '/form',name:'v-form', component: Form }
 
           ]
         },

@@ -1,6 +1,6 @@
 <template>
   <div id="markdown">
-    < class="container">
+    <div class="container">
       <mavon-editor
         v-model="content"
         ref="md"
@@ -8,36 +8,10 @@
         @imgAdd="$imgAdd"
         @change="change"
         style="min-height: 65vh"
-
       />
-    <!-- 提交信息 -->
-  
-    <form action="">
-    <!-- 姓名 -->
-    <p>
-      <label for="">Author</label>
-      <input type="text">
-    </p>
-    <!-- 标签 -->
-    <p>
-      <label for="theLable">标签</label>
-      <input type="checkbox" name="theLable" >
-      <input type="checkbox" name="theLable" >
-      <input type="checkbox" name="theLable" >
-      <input type="checkbox" name="theLable" >
-    </p>
-
-    <!-- 提交按钮 -->
-      <p>
-      <button @click="submit" class="markdown_btn">
-        <i class="fa fa-paper-plane-o fa-4x"></i>
-      </button>
-      </p>
-     
-    </form>
-    
-      
     </div>
+    <router-view></router-view>
+    
   </div>
 </template>
 
@@ -87,9 +61,6 @@ export default {
       this.$message.success("提交成功，已打印至控制台！");
     },
   },
-  mounted() {},
 };
 </script>
-<style >
-</style>
   

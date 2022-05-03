@@ -16,7 +16,8 @@
       <label>|</label>
       <router-link to="/quill">Quill</router-link>
     </nav>
-     <div class="edit-container">
+      <div class="edit-container">
+        <blog-form></blog-form>
         <router-view></router-view>
       </div>
 
@@ -24,10 +25,14 @@
 </template>
 <script>
 import "@/CSS/Edit.css";
+import Form from './views/Form.vue'
 export default {
   data() {
     return {};
   },
+  components:{
+    'blog-form':Form,
+  }
 };
 </script>
 

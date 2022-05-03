@@ -1,27 +1,5 @@
 #markdown {
   width: 60vw;
-  margin-left: -300px;
+  margin-right: 500px;
   height: 1000px;
-}
-
-#markdown .container .markdown_btn {
-
-  background-color: transparent;
-  /* 鼠标放上来变小手 */
-  cursor: pointer;
-  border: none;
-
-  margin: 20px;
-  height: 80px;
-  width: 80px;
-  position:fixed;
-  left: 85vw;
-  top: 15vh;
-}
-
-#markdown .container .markdown_btn:hover {
-  /* 向上移动 */
-  transform: translateY(-15px);
-  /* 延迟 贝塞尔曲线 */
-  transition: 0.6s  cubic-bezier(0.68,-0.55,0.565,1.55);
 }

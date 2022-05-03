@@ -10,7 +10,8 @@
         </quill-editor>
         <!-- 富文本内容 -->
         <div class="text"></div>
-        <button v-on:click="saveHtml">保存</button>
+        
+        <router-view></router-view>
     </div>
 </template> 
 <script>
