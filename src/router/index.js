@@ -4,12 +4,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-// 导入VueResource插件
-import VueResource from 'vue-resource';
-Vue.use(VueResource);
-
 // 入口页
-import Entrance from '@/components/Entrance'
+import Entrance from '@/components/Entrance.vue'
 
 // 导航栏
 import NavigationBar from '@/components/NavigationBar.vue'
@@ -51,7 +47,7 @@ export default new Router({
             { path: '/quill', component: Quill },
 
             //文章提交信息表单
-            { path: '/form',name:'v-form', component: Form }
+            { path: '/form', component: Form }
 
           ]
         },

@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+
+// 导入VueResource插件
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
 //引入富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
@@ -17,7 +22,7 @@ Vue.config.productionTip = false
 import{
   Select,
 }from 'element-ui'
-
+ 
 Vue.use(Select)
 
 new Vue({

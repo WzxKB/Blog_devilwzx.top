@@ -34,6 +34,7 @@
   </div>
 </template>
 <script>
+import "@/CSS/App.css";
 export default {
   data() {
     return {
@@ -47,5 +48,5 @@ export default {
 };
 </script>
 <style>
-@import "./CSS/App.css";
+
 </style>
