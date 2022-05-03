@@ -16,18 +16,22 @@
       <label>|</label>
       <router-link to="/quill">Quill</router-link>
     </nav>
-    
+    <blog-form></blog-form>
     <div class="edit-container">
       <router-view></router-view>
     </div>
   </div>
 </template>
 <script>
+import Form from "./views/Form.vue";
 import "@/CSS/Edit.css";
 
 export default {
   data() {
     return {};
+  },
+  components: {
+    "blog-form": Form,
   },
 };
 </script>

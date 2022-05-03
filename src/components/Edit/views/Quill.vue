@@ -17,7 +17,7 @@
   </div>
 </template> 
 <script>
-import Form from "./Form.vue";
+
 import "@/CSS/Quill.css";
 import { quillEditor } from "vue-quill-editor";
 import $ from "jquery"; //先安装jquery
@@ -33,9 +33,7 @@ export default {
       return this.$refs.myQuillEditor.quill;
     },
   },
-  components: {
-    "blog-form": Form,
-  },
+
   methods: {
     onEditorBlur() {
       //失去焦点事件

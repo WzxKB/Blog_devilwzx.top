@@ -1,5 +1,6 @@
 <template>
-  <div id="Form">   
+  <div id="Form"> 
+    
     <button type="submit">
         <i class="fa fa-paper-plane-o fa-3x"></i>
     </button>

@@ -1,12 +1,12 @@
-#From{
-    margin:0;
-    padding:0;
+#Form{
+    /* margin:0;
+    padding:0; */
     position:fixed;
-    top:0;
-    left:0;
+    top:16%;
+    left:75%;
     border: 1px solid red;
-    height: 100px;
-    width:100px;
+    height:800px;
+    width:300px;
 }
  
  #Form button {
@@ -15,11 +15,7 @@
     /* 鼠标放上来变小手 */
     cursor: pointer;
     border: none;
-  
-    margin: 20px;
-    height: 80px;
-    width: 80px;
-  }
+  } 
   
 #Form button:hover {
     /* 向上移动 */
