@@ -20,19 +20,13 @@ Vue.config.productionTip = false
 
 //引入element-ui
 import{
-  Select,
   Input,
   DatePicker,
-  Option,
-  OptionGroup,
   Tag,
 }from 'element-ui'
  
-Vue.use(Select)
 Vue.use(Input)
 Vue.use(DatePicker)
-Vue.use(Option)
-Vue.use(OptionGroup)
 Vue.use(Tag)
 
 new Vue({

@@ -63,7 +63,6 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.setWhite, true);
-    setWhite();
   },
 };
 </script>

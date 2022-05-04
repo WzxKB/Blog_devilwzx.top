@@ -27,6 +27,7 @@
 import Form from "./views/Form.vue";
 import "@/CSS/Edit.css";
 
+
 export default {
   data() {
     return {};

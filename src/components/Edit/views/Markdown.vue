@@ -4,7 +4,6 @@
       <mavon-editor
         v-model="content"
         ref="md"
-        :ishljs="true"
         @imgAdd="$imgAdd"
         @change="change"
         style="min-height: 65vh"
@@ -18,6 +17,7 @@
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 import "@/CSS/Markdown.css";
+import store from '../../../JS/store.js'
 
 export default {
   name: "",
@@ -25,12 +25,18 @@ export default {
   components: {
     mavonEditor,
   },
+  store,
   data() {
     return {
       content: "",
       html: "",
       configs: {},
     };
+  },
+  watch:{
+    content:function(){
+        this.$store.commit('setArtCH',this.content)
+    }
   },
   methods: {
     // 将图片上传到服务器，返回地址替换到md中
@@ -52,7 +58,6 @@ export default {
       // render 为 markdown 解析后的结果[html]
       this.html = render;
     },
-
   },
 };
 </script>

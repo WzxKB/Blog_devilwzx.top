@@ -20,12 +20,13 @@
     color: #fff;
     size: 5px;
 }
-.edit-container{
-    display:flex;
+
+.edit-container {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: fixed;
     top: 200px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
