@@ -52,13 +52,7 @@ export default {
       // render 为 markdown 解析后的结果[html]
       this.html = render;
     },
-    // 提交
-    submit() {
-      console.log(this.content);
-      console.log(this.html);
 
-      this.$message.success("提交成功，已打印至控制台！");
-    },
   },
 };
 </script>

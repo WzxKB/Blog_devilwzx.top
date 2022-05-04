@@ -16,7 +16,7 @@
       <label>|</label>
       <router-link to="/quill">Quill</router-link>
     </nav>
-    <blog-form></blog-form>
+    <Form></Form>
     <div class="edit-container">
       <router-view></router-view>
     </div>
@@ -31,7 +31,7 @@ export default {
     return {};
   },
   components: {
-    "blog-form": Form,
+    Form,
   },
 };
 </script>
