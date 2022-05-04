@@ -3,28 +3,29 @@
     <!-- 标题 -->
     <span>
       <label>Title:</label>
-      <el-input placeholder="Title" v-model="artTitle" clearable> </el-input>
+      <el-input placeholder="Title" v-model="blog.artTitle" clearable> </el-input>
     </span>
 
     <!-- 作者 -->
     <span>
       <label>Author</label>
-      <el-input placeholder="Author" v-model="artAuthor" clearable> </el-input>
+      <el-input placeholder="Author" v-model="blog.artAuthor" clearable> </el-input>
     </span>
 
     <!-- 标签 -->
     <span>
       <label>Tags:</label>
-      <br>
-      <br>
+      <br />
+      <br />
 
       <!-- 静态标签 -->
       <el-tag
         :key="tag"
-        v-for="tag in dynamicTags"
+        v-for="tag in blog.artTags"
         closable
         :disable-transitions="false"
         @close="handleClose(tag)"
+        class="el-tag"
       >
         {{ tag }}
       </el-tag>
@@ -51,12 +52,12 @@
     <span>
       <label>Date:</label>
       <br />
-      <el-date-picker v-model="artData" type="date" placeholder="选择日期">
+      <el-date-picker v-model="blog.artData" type="date" placeholder="选择日期">
       </el-date-picker>
     </span>
 
     <!-- 提交按钮 -->
-    <button type="submit" @click="submit">
+    <button type="submit" @click="submit" class="subBtn">
       <i class="fa fa-paper-plane-o fa-3x"></i>
     </button>
   </div>
@@ -64,25 +65,27 @@
 
 <script>
 import "@/CSS/Form.css";
-import store from "../../../JS/store.js"
+import store from "../../../JS/store.js";
 export default {
   data() {
     return {
-      dynamicTags: ['css','html'],
+      
       inputVisible: false,
       inputValue: "",
 
-      artContent:"",
-      artData:'',
-      artTitle:'',
-      artAuthor:'',
-
+      blog: {
+        artTags: ["css", "html"],
+        artData: "",
+        artTitle: "",
+        artAuthor: "",
+        artArtical: {},
+      },
     };
   },
   store,
   methods: {
     handleClose(tag) {
-      this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      this.blog.artTags.splice(this.blog.artTags.indexOf(tag), 1);
     },
 
     showInput() {
@@ -95,20 +98,16 @@ export default {
     handleInputConfirm() {
       let inputValue = this.inputValue;
       if (inputValue) {
-        this.dynamicTags.push(inputValue);
+        this.blog.artTags.push(inputValue);
       }
       this.inputVisible = false;
       this.inputValue = "";
     },
 
-   submit() {
-     this.artContent=this.$store.state.artContent
-     console.log(this.artContent)
-     console.log(this.dynamicTags)
-     console.log(this.artTitle)
-     console.log(this.artData)
-     console.log(this.artAuthor)
-   } 
+    submit() {
+      this.blog.artArtical = this.$store.state.artical;
+      console.log(this.blog);
+    },
   },
 };
 </script>

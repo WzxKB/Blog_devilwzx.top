@@ -2,7 +2,7 @@
   <div id="markdown">
     <div class="container">
       <mavon-editor
-        v-model="content"
+        v-model="artical.content"
         ref="md"
         @imgAdd="$imgAdd"
         @change="change"
@@ -17,7 +17,7 @@
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 import "@/CSS/Markdown.css";
-import store from '../../../JS/store.js'
+import store from "../../../JS/store.js";
 
 export default {
   name: "",
@@ -28,15 +28,21 @@ export default {
   store,
   data() {
     return {
-      content: "",
-      html: "",
+      artical: {
+        content: "",
+        html: "",
+      },
       configs: {},
     };
   },
-  watch:{
-    content:function(){
-        this.$store.commit('setArtCH',this.content)
-    }
+  watch: {
+    artical: {
+      handler:function(){
+        // console.log(this.art);
+         this.$store.commit("setArt", this.artical);
+      },
+      deep: true,
+    },
   },
   methods: {
     // 将图片上传到服务器，返回地址替换到md中
@@ -56,7 +62,7 @@ export default {
     // 所有操作都会被解析重新渲染
     change(value, render) {
       // render 为 markdown 解析后的结果[html]
-      this.html = render;
+      this.artical.html = render;
     },
   },
 };
