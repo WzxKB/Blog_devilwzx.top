@@ -16,8 +16,9 @@
       <label>|</label>
       <router-link to="/quill">Quill</router-link>
     </nav>
-    <Form></Form>
+   
     <div class="edit-container">
+      <Form></Form>
       <router-view></router-view>
     </div>
   </div>

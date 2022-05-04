@@ -23,13 +23,17 @@ import{
   Select,
   Input,
   DatePicker,
-  Option
+  Option,
+  OptionGroup,
+  Tag,
 }from 'element-ui'
  
 Vue.use(Select)
 Vue.use(Input)
 Vue.use(DatePicker)
 Vue.use(Option)
+Vue.use(OptionGroup)
+Vue.use(Tag)
 
 new Vue({
   el: '#app',
