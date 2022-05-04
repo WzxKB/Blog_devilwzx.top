@@ -41,13 +41,12 @@
 }
 
 .el-tag + .el-tag {
-  margin-left: 10px;
+  margin-left: 20px;
   cursor: pointer;
 }
 .el-tag{
   cursor: pointer;
   width: 90px;
-  margin-left: 10px;
 }
 /* 增加标签的按钮 */
 .button-new-tag {
