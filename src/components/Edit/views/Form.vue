@@ -103,11 +103,18 @@ export default {
       this.inputVisible = false;
       this.inputValue = "";
     },
-
     submit() {
       this.blog.artArtical = this.$store.state.artical;
       console.log(this.blog);
-    },
-  },
+
+      var api='http://localhost:3000/php/blogController.php';
+        // var blog2=JSON.stringify(this.blog)
+      this.$http.post(api,this.blog,{ emulate: true }).then((response)=>{
+            console.log(response)
+        },(err)=>{
+            console.log(err)
+        })
+    }
+    }, 
 };
 </script>

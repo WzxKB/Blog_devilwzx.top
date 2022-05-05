@@ -1,7 +1,7 @@
 <template>
   <div id="Quill">
     <quill-editor
-      v-model="content"
+      v-model="article.html"
       ref="myQuillEditor"
       :options="editorOption"
       @blur="onEditorBlur($event)"
@@ -9,22 +9,23 @@
       @change="onEditorChange($event)"
     >
     </quill-editor>
+
     <!-- 富文本内容 -->
     <div class="text"></div>
-
-    <blog-form></blog-form>
-    <router-view></router-view>
   </div>
 </template> 
 <script>
-
 import "@/CSS/Quill.css";
-import { quillEditor } from "vue-quill-editor";
-import $ from "jquery"; //先安装jquery
+// import { quillEditor } from "vue-quill-editor";
+// import $ from "jquery"; //先安装jquery
 export default {
   data() {
     return {
-      content: null,
+     article: {
+        html: "",
+        content: "",
+      },
+
       editorOption: {},
     };
   },
@@ -33,7 +34,6 @@ export default {
       return this.$refs.myQuillEditor.quill;
     },
   },
-
   methods: {
     onEditorBlur() {
       //失去焦点事件
@@ -43,12 +43,14 @@ export default {
     },
     onEditorChange() {
       //内容改变事件
-      //console.log(this.content)
-      //$('.text').html(this.content)
+      console.log(this.article.html);
+      console.log(this.article.content);
+      this.$store.commit('setArt',this.article)
+      // console.log( $('.text').html(this.blog.html))
     },
     saveHtml(event) {
       //点击保存按钮保存
-      alert(this.content);
+      alert(this.article.html);
     },
   },
 };

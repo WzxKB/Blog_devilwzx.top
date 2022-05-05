@@ -17,7 +17,7 @@
 import { mavonEditor } from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 import "@/CSS/Markdown.css";
-import store from "../../../JS/store.js";
+import store from "@/JS/store.js";
 
 export default {
   name: "",

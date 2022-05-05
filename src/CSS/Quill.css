@@ -1,12 +1,16 @@
 #Quill {
-    width: 60vw;
-    margin-right: 500px;
-    height: 1000px;
-  }
-  
-.quill-editor{
-    background-color:white;
-    height: 65vh;
-    border-radius: 6px;
-    box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.2);
+  width: 60vw;
+  margin-right: 500px;
+  height: 800px;
+
+}
+
+.quill-editor {
+  font-weight: normal;
+  font-style: normal;
+  font-size:normal;
+  background-color: white;
+  height: 65vh;
+  border-radius: 6px;
+  box-shadow: 0px 4px 45px rgba(0, 0, 0.2, 0.2);
 }
