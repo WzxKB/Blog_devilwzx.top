@@ -105,12 +105,18 @@ export default {
     },
     submit() {
       this.blog.artArtical = this.$store.state.artical;
-      console.log(this.blog);
+     
 
-      var api='http://localhost:3000/php/api.php/c=blogController&a=';
+      var api='http://localhost:3000/vue/php/api.php?c=blog&a=getBlogList';
         // var blog2=JSON.stringify(this.blog)
-      this.$http.get(api,{ emulate: true }).then((response)=>{
-            console.log(response)
+      this.$http.post(api).then((response)=>{
+        console.log(response)
+            var result=response.data;
+            if(result.status==1){
+              console.log("成功")
+            }else{
+              that.$Message.error(result.message)
+            }
         },(err)=>{
             console.log(err)
         })

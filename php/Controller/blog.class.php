@@ -21,15 +21,13 @@ class Blog extends Controller
             //追加数据
             array_push($res, $row);
         }
-        
-        $res . header('Access-Control-Allow-Origin:*');
-
         $data['status']=1;
         $data['message']='成功';
         $data['data']=$res;
         return $data;
     }
 
+    
     
 
 }
