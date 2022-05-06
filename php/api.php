@@ -1,4 +1,4 @@
-<?php
+ <?php
 include('conn.php');  //导入conn.php
 $sql = "SELECT * FROM blog";
 $result = mysqli_query($conn, $sql);
@@ -17,4 +17,4 @@ if (!$res) {
 echo json_encode($res);
 
 $conn->close();
-?>   
+?>    

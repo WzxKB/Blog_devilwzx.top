@@ -107,9 +107,9 @@ export default {
       this.blog.artArtical = this.$store.state.artical;
       console.log(this.blog);
 
-      var api='http://localhost:3000/php/blogController.php';
+      var api='http://localhost:3000/php/api.php/c=blogController&a=';
         // var blog2=JSON.stringify(this.blog)
-      this.$http.post(api,this.blog,{ emulate: true }).then((response)=>{
+      this.$http.get(api,{ emulate: true }).then((response)=>{
             console.log(response)
         },(err)=>{
             console.log(err)
