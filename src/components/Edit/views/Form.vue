@@ -106,14 +106,14 @@ export default {
     submit() {
       this.blog.artArtical = this.$store.state.artical;
      
-
-      var api='http://localhost:3000/vue/php/api.php?c=blog&a=getBlogList';
+      var api='http://localhost:3000/php/api.php?c=blog&a=insertBlogList';
         // var blog2=JSON.stringify(this.blog)
-      this.$http.post(api).then((response)=>{
+      this.$http.post(api,this.blog).then((response)=>{
         console.log(response)
             var result=response.data;
             if(result.status==1){
               console.log("成功")
+
             }else{
               that.$Message.error(result.message)
             }

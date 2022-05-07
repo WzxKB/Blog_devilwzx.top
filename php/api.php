@@ -58,12 +58,14 @@ if (file_exists($controller_path)) {
     //业务,让控制器使用指定函数,输出为json数据
     echo json_encode($controller->$GlobalAction($requestPayload));
 }
+
+
 // $controller = new $controller_beforeName();
 // echo json_encode($controller->$GlobalAction($requestPayload));
 // if (file_exists(BASE_PATH . '/Controller/blog.class.php')) {
-//     $controller = new blog();
-//     header('Access-Control-Allow-Origin:*');
-//     echo json_encode($controller->getBlogList($requestPayload));
+    // $controller = new blog();
+    // header('Access-Control-Allow-Origin:*');
+    // echo json_encode($controller->getBlogList($requestPayload));
 
 // }
 
