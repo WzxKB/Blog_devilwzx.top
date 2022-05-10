@@ -31,20 +31,30 @@ class Blog extends Controller
     //给blg表插入数据
     function insertBlogList($requestPayload)
     {
-        // $sql="INSERT INTO devilwzx_top.blog
-        // (artTitle, artAuthor, artTags, artTime, artContent, artHtml)
-        // VALUES($requestPayload.artTitle, $requestPayload.artAuthor, $requestPayload.artTags, $requestPayload.artTime, $requestPayload.artArtical.content, requestPayload,artArtical.html);
-        // ";
-        // $sql="INSERT INTO devilwzx_top.blog
-        // (artTitle, artAuthor, artTags, artTime, artContent, artHtml)
-        // VALUES('test2', 'trf', 'css,html', '2022-05-05', '人生', '嘿嘿嘿');
-        // " ;
-        // if(mysqli_query($this->conn, $sql)){
-        //     $data['message']='插入成功';
-        // };
-        // $requestPayload;
-        $data['status']=1;        
-        $data['data']=$requestPayload['artArtical']['content'];
+        $this->title=$requestPayload['artTitle'];
+        //imlode  函数  把tags数组转换成字符串
+        $this->tags=implode(",",$requestPayload['artTags']);
+        $this->content=$requestPayload['artArtical']['content'];
+        //html存入数据库进行转义  预处理
+        $this->html=htmlspecialchars($requestPayload['artArtical']['html']);
+        $this->time=$requestPayload['artTime'];
+        $this->author=$requestPayload['artAuthor'];
+        if(($this->title||$this->tags||$this->content||$this->html||$this->time||$this->author)!=null){
+            $sql="INSERT INTO devilwzx_top.blog
+            (artTitle, artAuthor,artTime,artContent,artHtml,artTags)
+            VALUES('$this->title','$this->author','$this->time','$this->content','$this->html','$this->tags')";
+           
+            if(mysqli_query($this->conn, $sql)){
+                $data['message']='插入成功';
+            }else{
+                $data['message']='插入失败';
+            };
+        }
+
+
+        $data['tag']=$this->tags;
+        $data['time']=$this->time;
+        $data['status']=1;
         return $data;
     }
 

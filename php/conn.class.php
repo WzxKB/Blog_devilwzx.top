@@ -10,5 +10,8 @@ class conn{
     function GetConn(){
         return $this->conn;
     }
+    function CloseConn(){
+        return $this->conn->close();
+    }
 }
 ?>

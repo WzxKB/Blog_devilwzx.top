@@ -52,11 +52,14 @@ $requestPayload = !empty($requestPayload) ? json_decode($requestPayload, true) :
 //检查文件路径下的文件是否存在
 if (file_exists($controller_path)) {
     //新建一个实例
+   
     $controller = new $controller_beforeName();
     //is_callable是php的函数,is_callable() 函数用于检测函数在当前环境中是否可调用。
-
+    if (is_callable(array($controller, $GlobalAction))) {
     //业务,让控制器使用指定函数,输出为json数据
     echo json_encode($controller->$GlobalAction($requestPayload));
+    $controller->conn->close();
+    }
 }
 
 

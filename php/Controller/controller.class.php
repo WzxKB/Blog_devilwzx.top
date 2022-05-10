@@ -7,7 +7,13 @@ require_once BASE_PATH . '/Controller/blog.class.php';
 
 class Controller
 {
-    public $conn;
+    protected $conn;
+    protected $title;
+    protected $time;
+    protected $tags;
+    protected $author;
+    protected $content;
+    protected $html;
 
     function __construct()
     {
