@@ -52,7 +52,7 @@
     <span>
       <label>Date:</label>
       <br />
-      <el-date-picker v-model="blog.artData" type="date" placeholder="选择日期">
+      <el-date-picker v-model="blog.artTime" type="date" placeholder="选择日期">
       </el-date-picker>
     </span>
 
@@ -75,7 +75,7 @@ export default {
 
       blog: {
         artTags: ["css", "html"],
-        artData: "",
+        artTime: "",
         artTitle: "",
         artAuthor: "",
         artArtical: {},
