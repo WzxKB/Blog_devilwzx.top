@@ -1,0 +1,26 @@
+.text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+
+#Music{
+    width: 250px;
+    height:405px;
+    position: fixed;
+    top: 640px;
+    left: 5%;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}

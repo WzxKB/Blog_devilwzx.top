@@ -10,16 +10,39 @@
  * Copyright (c) 2022 by devilwzx, All Rights Reserved. 
 -->
 <template>
- <div>
-     <h2>我是主页</h2>
- </div>
-        
+    <div>
+        <Carousel></Carousel>
+        <Information></Information>
+        <Music></Music>
+        <div id="Home">
+
+        </div>
+        <BulletinBoard></BulletinBoard>
+        <Search></Search>
+    </div>
+
 </template>
 <script>
+//导入组件
+import BulletinBoard from './views/BulletinBoard.vue'
+import Information from './views/Information.vue'
+import Music from './views/Music.vue'
+import Search from './views/Search.vue'
+import Carousel from './views/Carousel.vue'
+//引入样式
+import "@/CSS/Home/Home.css"
 export default {
     data() {
-        return{
+        return {
         }
+    },
+    components: {
+        //use组件
+        BulletinBoard,
+        Information,
+        Music,
+        Search,
+        Carousel,
     }
 }
 </script>

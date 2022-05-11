@@ -1,0 +1,27 @@
+.text {
+  font-size: 14px;
+}
+
+.item {
+  margin-bottom: 18px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+
+#BulletinBoard {
+  width: 250px;
+  height: 250px;
+
+  position: fixed;
+  top: 200px;
+  right: 5%;
+ box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}

@@ -24,12 +24,20 @@ import{
   DatePicker,
   Tag,
   Button,
+  Carousel,
+  CarouselItem,
+  Slider,
+  Card
 }from 'element-ui'
  
 Vue.use(Input)
 Vue.use(DatePicker)
 Vue.use(Tag)
 Vue.use(Button)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
+Vue.use(Slider)
+Vue.use(Card)
 
 new Vue({
   el: '#app',

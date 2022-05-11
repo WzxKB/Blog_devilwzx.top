@@ -1,0 +1,19 @@
+#Search {
+    width: 250px;
+    height: 250px;
+    
+    position: fixed;
+    top: 640px;
+    right: 5%;
+  }
+  .SearchTags{
+    width: 250px;
+    height: 250px;
+    margin-top:25px;
+    background:#fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+  }
+  .SearchInput{
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+  }
