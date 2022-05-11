@@ -10,10 +10,10 @@
  * Copyright (c) 2022 by devilwzx, All Rights Reserved. 
 -->
 <template>
-    <div
-        <h2>我是主页</h2>
-        </div>
-    </div>
+ <div>
+     <h2>我是主页</h2>
+ </div>
+        
 </template>
 <script>
 export default {

@@ -63,11 +63,11 @@ class Blog extends Controller
             //把查询结果放在数组中,在看它是不是为空
             if (mysqli_fetch_assoc(mysqli_query($this->conn, $sql2))!= null) {
                 mysqli_query($this->conn, $sql3);
-                $data['message'] = '更新成功';
+                $data['message'] = '更新数据成功';
             }else if(mysqli_query($this->conn, $sql)) {
-                $data['message'] = '插入成功';
+                $data['message'] = '插入数据成功';
             }else {
-                $data['message'] = '插入失败';
+                $data['message'] = '插入数据失败';
             }            
         }
         $data['status'] = 1;
